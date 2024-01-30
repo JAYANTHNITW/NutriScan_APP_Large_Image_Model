@@ -1,0 +1,13 @@
+prefix=D:/caloriesAdvisor/calories/Library
+exec_prefix=D:/caloriesAdvisor/calories/Library
+libdir=D:/caloriesAdvisor/calories/Library/lib
+sharedlibdir=D:/caloriesAdvisor/calories/Library/lib
+includedir=D:/caloriesAdvisor/calories/Library/include
+
+Name: zlib
+Description: zlib compression library
+Version: 1.2.13
+
+Requires:
+Libs: -L${libdir} -L${sharedlibdir} -lz
+Cflags: -I${includedir}
