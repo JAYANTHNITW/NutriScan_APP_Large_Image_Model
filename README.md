@@ -1,4 +1,6 @@
 # NutriScan App
+ 
+| <img src="d5e4b9404ae867206c2945b4f51186e4.jpg" width="400"/> | <img src="Screenshot 2024-01-30 195300.png" width="400"/> |
 
 **Overview:**
 
