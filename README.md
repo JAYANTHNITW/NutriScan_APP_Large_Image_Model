@@ -51,3 +51,73 @@
 
 - This app is licensed under [License Name].
 - See the [LICENSE](LICENSE) file for details.
+
+- ## Project Setup
+
+### Prerequisites
+- A Google Cloud Platform (GCP) project
+- A GitHub repository containing your application code
+
+### Deployment Instructions
+
+#### 1. Dockerfile
+
+1. Create a Dockerfile in the root of your project directory.
+
+Example (basic Python app):
+```
+Dockerfile
+FROM python:3.9
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+
+COPY 
+
+EXPOSE 8080
+
+CMD ["python", "app.py"]
+```
+#### 2. cloudbuild.yaml
+Create a cloudbuild.yaml file in your project's root directory.
+Example:
+steps:
+```
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/your-app-name', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/$PROJECT_ID/your-app-name']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['run', 'deploy', 'your-app-name', '--image', 'gcr.io/$PROJECT_ID/your-app-name', '--region', 'asia-south1', '--platform', 'managed', '--allow-unauthenticated']  
+```
+ Replace `$PROJECT_ID` with your GCP project ID. Update `your-app-name` as needed.
+
+#### 3. Enable APIs
+In the Google Cloud Console, enable the following APIs:
+- Cloud Build API
+- Cloud Run API
+- IAM API
+  
+#### 4. IAM Permissions
+* Grant necessary permissions to the Cloud Build service account:
+* Cloud Run Admin
+* Storage Object Admin (if needed)
+
+#### 5. Create a Cloud Run Service
+* Choose your desired region in the Google Cloud Console.
+  
+#### 6. Cloud Build Trigger
+* Connect your GitHub repository to Cloud Build.
+* Create a trigger for your main (or relevant) branch.
+  
+#### 7. Deployment
+* Push changes to your GitHub repository to trigger the deployment process.
+  
+#### Troubleshooting
+- Check build logs in Cloud Build.
+- Verify Cloud Build service account permissions.
+- Review Cloud Run service configuration.
+
+#### Feel free to reach out with any questions!
