@@ -54,7 +54,7 @@ Format: | Item | Calories | Proteins | Carbohydrates | Fibers | Fats | |--------
 Ideal Macronutrient Ratio vs. Analyzed Ratio:
 
 Display a table comparing the ideal macronutrient ratio for a healthy diet (based on ICMR or other suitable guidelines) alongside the approximate ratio analyzed from the food image. This highlights potential areas of imbalance in the user's meal.
-Actionable Guidance:
+Actionable Guidance:  
 
 Focus on Excess: Identify the macronutrients (carbs, fats, etc.) that seem to be consumed in excess compared to the ideal ratio.
 Suggestions: Provide specific suggestions for reducing the excessive macronutrient. Example: "It seems carbohydrates are a bit high in this meal. Try swapping a portion of [carb-heavy food] for a green salad or other vegetables."
