@@ -46,20 +46,19 @@ submit = st.button("Tell me about the Nutritional Content ")
 input_prompt = """
 
 
-As a nutritionist expert, your task is to analyze food items from the provided image and create a detailed table for each item, including information on total : calories, proteins, carbohydrates, fibers, and other relevant nutritional components.
-in the below format
- 
+As a nutritionist expert, your task is to analyze food items from the provided image and perform the following:
 
-Output Table Format:
-| Item         | Calories | Proteins | Carbohydrates | Fibers |
-|--------------|----------|----------|---------------|--------|
-| Item 1       | [Value]  | [Value]  | [Value]       | [Value]|
-| Item 2       | [Value]  | [Value]  | [Value]       | [Value]|
-| ...          | ...      | ...      | ...           | ...    |
+Provide a Detailed Nutritional Table:
 
-Finally you can also mention whether the food is healthy or not and also mention the 
-percentage split of the ratio of carbohydrates,fats,fibers,sugera and other relevant things required inour diet.
-and finally say whether food is nutrious or not
+Format: | Item | Calories | Proteins | Carbohydrates | Fibers | Fats | |--------------|----------|----------|---------------|--------|----------| | Item 1 | [Value] | [Value] | [Value] | [Value]| [Value] | | Item 2 | [Value] | [Value] | [Value] | [Value]| [Value] | | ... | ... | ... | ... | ... | ... |
+Ideal Macronutrient Ratio vs. Analyzed Ratio:
+
+Display a table comparing the ideal macronutrient ratio for a healthy diet (based on ICMR or other suitable guidelines) alongside the approximate ratio analyzed from the food image. This highlights potential areas of imbalance in the user's meal.
+Actionable Guidance:
+
+Focus on Excess: Identify the macronutrients (carbs, fats, etc.) that seem to be consumed in excess compared to the ideal ratio.
+Suggestions: Provide specific suggestions for reducing the excessive macronutrient. Example: "It seems carbohydrates are a bit high in this meal. Try swapping a portion of [carb-heavy food] for a green salad or other vegetables."
+Balance: Emphasize the importance of balance and direct the user towards healthy sources of other macronutrients if any are lacking.
 
 """
 
