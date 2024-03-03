@@ -14,7 +14,7 @@ steps:
 images:
   - 'gcr.io/nutriscan-deployment/my-nutriscan-app'
 
-options:
+options: 
   logging: CLOUD_LOGGING_ONLY
  
 
