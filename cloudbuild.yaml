@@ -14,3 +14,6 @@ steps:
 images:
   - 'gcr.io/nutriscan-deployment/my-nutriscan-app'
 
+options:
+  logging: 'REGIONAL_USER_OWNED_BUCKET' 
+
