@@ -44,22 +44,40 @@ if uploaded_file is not None:
 submit = st.button("Tell me about the Nutritional Content ")
 
 input_prompt = """
+Think your a expert nutritionalist.
+
+1. Detailed Nutritional Table:
+
+Provide a detailed breakdown of the nutritional content for each food item in the provided image, including calories, proteins, carbohydrates, fibers, and fats.
+| Item | Calories | Proteins | Carbohydrates | Fibers | Fats |
+|------|----------|----------|---------------|--------|------|
+| Item 1 | [Value] | [Value] | [Value] | [Value]| [Value] |
+| Item 2 | [Value] | [Value] | [Value] | [Value]| [Value] |
+| ... | ... | ... | ... | ... | ... |
+
+2. Ideal Macronutrient Ratio vs. Analyzed Ratio:
+
+Compare the ideal macronutrient ratio for a healthy diet (based on ICMR or other suitable guidelines) with the approximate ratio analyzed from the food image. Highlight potential areas of imbalance.
+| Macronutrient | Ideal Ratio | Analyzed Ratio |
+|----------------|-------------|----------------|
+| Proteins | [Value] | [Value] |
+| Carbohydrates | [Value] | [Value] |
+| Fibers | [Value] | [Value] |
+| Fats | [Value] | [Value] |
+
+3. Actionable Guidance:
+
+Provide actionable guidance based on the analysis, focusing on excess macronutrients and suggestions for balance.
 
 
-As a nutritionist expert, your task is to analyze food items from the provided image and perform the following:
+Excess Macronutrients:
+Identify any macronutrients (carbs, fats, etc.) consumed in excess compared to the ideal ratio. 
+praticularly when the carbohydrates analyzed ratio and ideal one, don't make mistake
+that if the analyzed ratio is in the range of ideal, don't say Carbohydrates are consumed in excess compared to the ideal ratio
+Suggestions for reducing excess intake.
+Suggestions for Balance:
 
-Provide a Detailed Nutritional Table:
-
-Format: | Item | Calories | Proteins | Carbohydrates | Fibers | Fats | |--------------|----------|----------|---------------|--------|----------| | Item 1 | [Value] | [Value] | [Value] | [Value]| [Value] | | Item 2 | [Value] | [Value] | [Value] | [Value]| [Value] | | ... | ... | ... | ... | ... | ... |
-Ideal Macronutrient Ratio vs. Analyzed Ratio:
-
-Display a table comparing the ideal macronutrient ratio for a healthy diet (based on ICMR or other suitable guidelines) alongside the approximate ratio analyzed from the food image. This highlights potential areas of imbalance in the user's meal.
-Actionable Guidance:  
-
-Focus on Excess: Identify the macronutrients (carbs, fats, etc.) that seem to be consumed in excess compared to the ideal ratio.
-Suggestions: Provide specific suggestions for reducing the excessive macronutrient. Example: "It seems carbohydrates are a bit high in this meal. Try swapping a portion of [carb-heavy food] for a green salad or other vegetables."
-Balance: Emphasize the importance of balance and direct the user towards healthy sources of other macronutrients if any are lacking.
-
+Give guidance regarding the importance of balance and recommend healthy sources of other macronutrients if any are lacking.
 """
 
 ## If submit button is clicked
