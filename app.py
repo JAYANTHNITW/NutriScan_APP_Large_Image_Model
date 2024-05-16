@@ -1,8 +1,8 @@
 import streamlit as st
 import google.generativeai as genai 
 import os
-from dotenv import load_dotenv
-load_dotenv() # loading all the envinorment variables
+#from dotenv import load_dotenv
+#load_dotenv() # loading all the envinorment variables
 from PIL import Image
 
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
