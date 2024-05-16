@@ -2,6 +2,8 @@ steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/nutriscan-deployment/my-nutriscan-app', '.']
+    env:
+      - 'GOOGLE_API_KEY=${_GOOGLE_API_KEY}'  # Pass the API key as an environment variable
 
   # Push the Docker image to Google Container Registry
   - name: 'gcr.io/cloud-builders/docker'
@@ -16,5 +18,11 @@ images:
 
 options: 
   logging: CLOUD_LOGGING_ONLY
+secrets:
+  - secretManager:
+      name: GOOGLE_API_KEY  # Name of your GitHub secret
+      versions: ['latest']
+      env: '_GOOGLE_API_KEY'  # Environment variable name to store the API key
+
  
 
