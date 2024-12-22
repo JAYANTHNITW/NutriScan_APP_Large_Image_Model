@@ -1,15 +1,16 @@
 import streamlit as st
 import google.generativeai as genai 
 import os
-#from dotenv import load_dotenv
-#load_dotenv() # loading all the envinorment variables
+from dotenv import load_dotenv
+load_dotenv() # loading all the envinorment variables
 from PIL import Image
 
-api_key = st.secrets['GOOGLE_API_KEY']
+# api_key = st.secrets['GOOGLE_API_KEY']
+api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=api_key)
 
 def get_gemini_response(input_prompt,image):
-    model = genai.GenerativeModel("gemini-pro-vision")
+    model = genai.GenerativeModel("gemini-1.5-flash")
     responses = model.generate_content([input_prompt,image[0]])
     return responses.text
 
